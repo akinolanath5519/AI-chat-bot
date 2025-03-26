@@ -4,8 +4,8 @@
   "description": "Backend for custom AI chatbot with Claude API integration",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "dev": "nodemon server.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
