@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Demo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Website with AI Chatbot Integration</h1>
+        <p>This is a demo page showing how the AI chatbot can be integrated into any website.</p>
+        <p>Click on the chat icon in the bottom right corner to start a conversation with the AI assistant.</p>
+        
+        <div class="content-section">
+            <h2>How It Works</h2>
+            <p>The chatbot uses Anthropic's Claude to provide intelligent responses to user queries. It can:</p>
+            <ul>
+                <li>Answer questions about products and services</li>
+                <li>Provide customer support</li>
+                <li>Collect lead information when appropriate</li>
+                <li>Maintain context throughout the conversation</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2>Integration Instructions</h2>
+            <p>To integrate this chatbot into your own website:</p>
+            <ol>
+                <li>Include the chatbot.js script in your HTML</li>
+                <li>Add your API endpoint in the configuration</li>
+                <li>Customize the appearance to match your brand</li>
+            </ol>
+            <pre><code>&lt;script src="path/to/chatbot.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  initChatbot({
+    apiUrl: 'https://your-api-endpoint.com',
+    theme: 'light'
+  });
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+    
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <div class="chatbot-header">
+            <div class="chatbot-title">AI Assistant</div>
+            <div class="chatbot-controls">
+                <button id="minimize-btn" class="control-btn"><i class="fas fa-minus"></i></button>
+                <button id="close-btn" class="control-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <div class="chatbot-body">
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will be added here dynamically -->
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hello! I'm your AI assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div id="lead-form" class="lead-form hidden">
+                <h3>Please provide your information</h3>
+                <form id="user-info-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+            
+            <div class="chat-input-container">
+                <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Launcher Button -->
+    <button id="chat-launcher" class="chat-launcher">
+        <i class="fas fa-comment"></i>
+    </button>
+    
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
